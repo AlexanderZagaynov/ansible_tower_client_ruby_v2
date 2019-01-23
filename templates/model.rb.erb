@@ -1,0 +1,7 @@
+# frozen_string_literal: true
+
+class AnsibleTowerClient::<%= data[:class_name] %> < AnsibleTowerClient::BaseModel
+<<JSON
+<%= data[:info].ai(indent: -2, plain: true) %>
+JSON
+end
