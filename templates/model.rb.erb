@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 class AnsibleTowerClient::<%= data[:class_name] %> < AnsibleTowerClient::BaseModel
-<<JSON
-<%= data[:info].ai(indent: -2, plain: true) %>
-JSON
+<%- unless data[:attributes].empty? -%>
+  schema do
+  <%- data[:attributes].each do |attr_name, attr_data| -%>
+    attribute :<%= attr_name %>, :<%= attr_data[:type] %>
+  <%- end -%>
+  end
+<%- end -%>
 end

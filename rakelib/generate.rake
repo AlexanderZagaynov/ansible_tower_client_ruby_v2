@@ -85,6 +85,7 @@ task :generate do
 
     data = {}
     data[:class_name] = endpoint_name.classify
+    data[:attributes] = endpoint_data[:attributes] || {}
     data[:info]       = endpoint_data
 
     file_path = File.join(models_dir, "#{endpoint_name.singularize}.rb")

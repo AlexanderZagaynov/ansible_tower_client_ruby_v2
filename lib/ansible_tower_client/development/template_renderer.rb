@@ -15,7 +15,7 @@ class AnsibleTowerClient::Development::TemplateRenderer
     @template_path    = template_path
     template_fullpath = File.join(TEMPLATES_DIR, "#{template_path}.erb")
     @template_string  = File.read(template_fullpath)
-    @template         = ERB.new(template_string, nil, nil, '@result')
+    @template         = ERB.new(template_string, nil, '-', '@result')
   end
 
   def result
